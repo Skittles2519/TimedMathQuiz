@@ -66,9 +66,6 @@ namespace TimedMathQuiz
         {
             if (CheckTheAnswer())
             {
-                // If CheckTheAnswer() returns true, then the user 
-                // got the answer right. Stop the timer  
-                // and show a MessageBox.
                 timer1.Stop();
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
@@ -76,16 +73,17 @@ namespace TimedMathQuiz
             }
             if (timeLeft > 0)
             {
-                // Display the new time left
-                // by updating the Time Left label.
                 timeLeft--;
                 timeLabel.Text = timeLeft + " seconds";
+                if(timeLeft < 6)
+                {
+                    timeLabel.BackColor = Color.Red;
+                }
             }
             else
             {
-                // If the user ran out of time, stop the timer, show
-                // a MessageBox, and fill in the answers.
                 timer1.Stop();
+                timeLabel.BackColor = Color.Transparent;
                 timeLabel.Text = "Time's up!";
                 MessageBox.Show("You didn't finish in time.", "Sorry");
                 sum.Value = addend1 + addend2;
@@ -107,7 +105,6 @@ namespace TimedMathQuiz
         }
         private void answer_Enter(object sender, EventArgs e)
         {
-            // Select the whole answer in the NumericUpDown control.
             NumericUpDown answerBox = sender as NumericUpDown;
 
             if (answerBox != null)
