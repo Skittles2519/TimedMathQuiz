@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timeLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.plusLeftLabel = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.dividedLeftLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Date = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).BeginInit();
@@ -65,7 +67,7 @@
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeLabel.Location = new System.Drawing.Point(266, 9);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(200, 30);
+            this.timeLabel.Size = new System.Drawing.Size(200, 40);
             this.timeLabel.TabIndex = 0;
             // 
             // label1
@@ -291,11 +293,20 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // Date
+            // 
+            this.Date.AutoSize = true;
+            this.Date.Location = new System.Drawing.Point(13, 13);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(0, 20);
+            this.Date.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 390);
+            this.Controls.Add(this.Date);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.quotient);
             this.Controls.Add(this.label12);
@@ -320,9 +331,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.timeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Hunter Perry - Timed Math Quiz";
             ((System.ComponentModel.ISupportInitialize)(this.sum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).EndInit();
@@ -358,6 +370,7 @@
         private System.Windows.Forms.Label dividedLeftLabel;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label Date;
     }
 }
 

@@ -12,6 +12,7 @@ namespace TimedMathQuiz
 {
     public partial class Form1 : Form
     {
+        DateTime date = DateTime.Now;
         Random randomizer = new Random();
         int addend1;
         int addend2;
@@ -23,10 +24,10 @@ namespace TimedMathQuiz
         int dividend;
         int divisor;
 
-
         public Form1()
         {
             InitializeComponent();
+            Date.Text = date.Date.ToString("MM/dd/yyyy");
         }
 
         public void StartTheQuiz()
@@ -64,6 +65,27 @@ namespace TimedMathQuiz
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (CheckAddition())
+            {
+                sum.BackColor = Color.Green;
+            }
+            if (CheckMultiplication())
+            {
+                product.BackColor = Color.Green;
+
+            }
+            if (CheckSubtraction())
+            {
+                difference.BackColor = Color.Green;
+
+            }
+            if (CheckDivision())
+            {
+                quotient.BackColor = Color.Green;
+
+            }
+
+
             if (CheckTheAnswer())
             {
                 timer1.Stop();
@@ -71,6 +93,7 @@ namespace TimedMathQuiz
                                 "Congratulations!");
                 startButton.Enabled = true;
             }
+           
             if (timeLeft > 0)
             {
                 timeLeft--;
@@ -99,6 +122,36 @@ namespace TimedMathQuiz
                   && (minuend - subtrahend == difference.Value)
                   && (multiplicand * multiplier == product.Value)
                   && (dividend / divisor == quotient.Value))
+                return true;
+            else
+                return false;
+        }
+        private bool CheckAddition()
+        {
+            if (addend1 + addend2 == sum.Value)
+                
+                return true;
+            else
+                return false;
+        }
+        private bool CheckSubtraction()
+        {
+            if (minuend - subtrahend == difference.Value)
+                 
+                return true;
+            else
+                return false;
+        }
+        private bool CheckMultiplication()
+        {
+            if (multiplicand * multiplier == product.Value)
+                return true;
+            else
+                return false;
+        }
+        private bool CheckDivision()
+        {
+            if (dividend / divisor == quotient.Value)
                 return true;
             else
                 return false;
