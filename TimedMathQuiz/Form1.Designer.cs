@@ -36,17 +36,17 @@
             this.plusRightLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.sum = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.difference = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.minusRightLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.minusLeftLabel = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.product = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.timesRightLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.timesLeftLabel = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.quotient = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.dividedRightLabel = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -54,9 +54,9 @@
             this.startButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.difference)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.product)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quotient)).BeginInit();
             this.SuspendLayout();
             // 
             // timeLabel
@@ -125,14 +125,16 @@
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(100, 48);
             this.sum.TabIndex = 2;
+            this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
-            // numericUpDown1
+            // difference
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(314, 134);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 48);
-            this.numericUpDown1.TabIndex = 3;
+            this.difference.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.difference.Location = new System.Drawing.Point(314, 134);
+            this.difference.Name = "difference";
+            this.difference.Size = new System.Drawing.Size(100, 48);
+            this.difference.TabIndex = 3;
+            this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label3
             // 
@@ -174,13 +176,14 @@
             this.minusLeftLabel.Text = "?";
             this.minusLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown2
+            // product
             // 
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(314, 194);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(100, 48);
-            this.numericUpDown2.TabIndex = 4;
+            this.product.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product.Location = new System.Drawing.Point(314, 194);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(100, 48);
+            this.product.TabIndex = 4;
+            this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label8
             // 
@@ -222,13 +225,14 @@
             this.timesLeftLabel.Text = "?";
             this.timesLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown3
+            // quotient
             // 
-            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown3.Location = new System.Drawing.Point(314, 254);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(100, 48);
-            this.numericUpDown3.TabIndex = 5;
+            this.quotient.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quotient.Location = new System.Drawing.Point(314, 254);
+            this.quotient.Name = "quotient";
+            this.quotient.Size = new System.Drawing.Size(100, 48);
+            this.quotient.TabIndex = 5;
+            this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label12
             // 
@@ -293,17 +297,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 390);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.quotient);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dividedRightLabel);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dividedLeftLabel);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.product);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.timesRightLabel);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.timesLeftLabel);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.difference);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.minusRightLabel);
             this.Controls.Add(this.label6);
@@ -320,9 +324,9 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.sum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.difference)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.product)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quotient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,17 +341,17 @@
         private System.Windows.Forms.Label plusRightLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown sum;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown difference;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label minusRightLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label minusLeftLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown product;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label timesRightLabel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label timesLeftLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown quotient;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label dividedRightLabel;
         private System.Windows.Forms.Label label14;
